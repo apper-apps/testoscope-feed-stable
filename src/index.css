@@ -3,32 +3,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Viewport capture fix */
+/* Viewport and overflow handling */
 html, body {
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* Ensure scrollbars are visible */
-body {
-  overflow-y: auto;
-  overflow-x: hidden;
   margin: 0;
+  padding: 0;
+  width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Prevent horizontal overflow */
 * {
-  max-width: 100%;
+  box-sizing: border-box;
 }
 
-/* Main content areas must allow scroll */
+/* Main content areas - allow natural scrolling */
 .main-content {
   overflow-y: auto;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 @layer utilities {

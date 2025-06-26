@@ -1,14 +1,16 @@
-import { Outlet, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import WizardNavigation from '@/components/organisms/WizardNavigation'
+import { Outlet, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+import "@/index.css";
+import WizardNavigation from "@/components/organisms/WizardNavigation";
 
 const Layout = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
-<div className="min-h-screen h-screen flex flex-col overflow-hidden bg-white relative">
+    <div className="min-h-screen flex flex-col bg-white relative">
       {/* Header */}
-      <header className="flex-shrink-0 bg-white border-b border-surface-200 z-40">
+      <header className="bg-white border-b border-surface-200 sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -21,7 +23,7 @@ const Layout = () => {
       </header>
 
       {/* Main Content */}
-<main className="flex-1 overflow-y-auto overflow-x-hidden">
+      <main className="flex-1 overflow-y-auto overflow-x-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <AnimatePresence mode="wait">
             <motion.div
@@ -37,7 +39,7 @@ const Layout = () => {
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
