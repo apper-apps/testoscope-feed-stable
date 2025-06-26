@@ -1,0 +1,294 @@
+[
+  {
+    "Id": 1,
+    "name": "Total Testosterone",
+    "category": "Core Hormones",
+    "units": ["nmol/L", "ng/dL"],
+    "optimalRange": {
+      "low": 8.68,
+      "suboptimalLow": 15.62,
+      "optimal": 34.7,
+      "suboptimalHigh": 40.0,
+      "high": 50.0
+    },
+    "ageAdjustment": {
+      "rate": -1.0,
+      "startAge": 30
+    },
+    "description": "Primary male hormone responsible for muscle mass, libido, and energy"
+  },
+  {
+    "Id": 2,
+    "name": "Free Testosterone",
+    "category": "Core Hormones",
+    "units": ["nmol/L", "pg/mL"],
+    "optimalRange": {
+      "low": 0.15,
+      "suboptimalLow": 0.25,
+      "optimal": 0.45,
+      "suboptimalHigh": 0.55,
+      "high": 0.70
+    },
+    "ageAdjustment": {
+      "rate": -1.2,
+      "startAge": 30
+    },
+    "description": "Bioavailable testosterone not bound to proteins"
+  },
+  {
+    "Id": 3,
+    "name": "LH (Luteinizing Hormone)",
+    "category": "Core Hormones",
+    "units": ["IU/L", "mIU/mL"],
+    "optimalRange": {
+      "low": 1.5,
+      "suboptimalLow": 3.0,
+      "optimal": 8.0,
+      "suboptimalHigh": 12.0,
+      "high": 15.0
+    },
+    "description": "Brain hormone that signals testosterone production"
+  },
+  {
+    "Id": 4,
+    "name": "FSH (Follicle Stimulating Hormone)",
+    "category": "Core Hormones",
+    "units": ["IU/L", "mIU/mL"],
+    "optimalRange": {
+      "low": 1.0,
+      "suboptimalLow": 2.0,
+      "optimal": 8.0,
+      "suboptimalHigh": 12.0,
+      "high": 15.0
+    },
+    "description": "Brain hormone involved in sperm production"
+  },
+  {
+    "Id": 5,
+    "name": "SHBG (Sex Hormone Binding Globulin)",
+    "category": "Core Hormones",
+    "units": ["nmol/L", "μg/dL"],
+    "optimalRange": {
+      "low": 10,
+      "suboptimalLow": 20,
+      "optimal": 40,
+      "suboptimalHigh": 55,
+      "high": 70
+    },
+    "ageAdjustment": {
+      "rate": 0.8,
+      "startAge": 30
+    },
+    "description": "Protein that binds and transports sex hormones"
+  },
+  {
+    "Id": 6,
+    "name": "Prolactin",
+    "category": "Core Hormones",
+    "units": ["μg/L", "ng/mL"],
+    "optimalRange": {
+      "low": 2.0,
+      "suboptimalLow": 4.0,
+      "optimal": 15.0,
+      "suboptimalHigh": 20.0,
+      "high": 25.0
+    },
+    "description": "Hormone that can suppress testosterone when elevated"
+  },
+  {
+    "Id": 7,
+    "name": "Estradiol (E2)",
+    "category": "Core Hormones",
+    "units": ["pmol/L", "pg/mL"],
+    "optimalRange": {
+      "low": 40,
+      "suboptimalLow": 70,
+      "optimal": 120,
+      "suboptimalHigh": 150,
+      "high": 200
+    },
+    "description": "Estrogen hormone important for bone health and libido"
+  },
+  {
+    "Id": 8,
+    "name": "TSH (Thyroid Stimulating Hormone)",
+    "category": "Thyroid",
+    "units": ["mIU/L", "μIU/mL"],
+    "optimalRange": {
+      "low": 0.3,
+      "suboptimalLow": 1.0,
+      "optimal": 2.5,
+      "suboptimalHigh": 4.0,
+      "high": 6.0
+    },
+    "description": "Brain hormone that regulates thyroid function"
+  },
+  {
+    "Id": 9,
+    "name": "Free T3",
+    "category": "Thyroid",
+    "units": ["pmol/L", "pg/mL"],
+    "optimalRange": {
+      "low": 3.5,
+      "suboptimalLow": 4.5,
+      "optimal": 6.5,
+      "suboptimalHigh": 7.5,
+      "high": 8.5
+    },
+    "description": "Active thyroid hormone affecting metabolism"
+  },
+  {
+    "Id": 10,
+    "name": "Free T4",
+    "category": "Thyroid",
+    "units": ["pmol/L", "ng/dL"],
+    "optimalRange": {
+      "low": 10,
+      "suboptimalLow": 15,
+      "optimal": 20,
+      "suboptimalHigh": 25,
+      "high": 30
+    },
+    "description": "Storage form of thyroid hormone"
+  },
+  {
+    "Id": 11,
+    "name": "Total Cholesterol",
+    "category": "Cardiovascular",
+    "units": ["mmol/L", "mg/dL"],
+    "optimalRange": {
+      "low": 3.0,
+      "suboptimalLow": 4.0,
+      "optimal": 5.5,
+      "suboptimalHigh": 6.5,
+      "high": 8.0
+    },
+    "description": "Total blood cholesterol levels"
+  },
+  {
+    "Id": 12,
+    "name": "HDL Cholesterol",
+    "category": "Cardiovascular",
+    "units": ["mmol/L", "mg/dL"],
+    "optimalRange": {
+      "low": 0.8,
+      "suboptimalLow": 1.0,
+      "optimal": 1.8,
+      "suboptimalHigh": 2.5,
+      "high": 3.0
+    },
+    "description": "Good cholesterol that protects heart health"
+  },
+  {
+    "Id": 13,
+    "name": "LDL Cholesterol",
+    "category": "Cardiovascular",
+    "units": ["mmol/L", "mg/dL"],
+    "optimalRange": {
+      "low": 1.0,
+      "suboptimalLow": 2.0,
+      "optimal": 3.0,
+      "suboptimalHigh": 4.0,
+      "high": 5.0
+    },
+    "description": "Bad cholesterol that can clog arteries"
+  },
+  {
+    "Id": 14,
+    "name": "Triglycerides",
+    "category": "Cardiovascular",
+    "units": ["mmol/L", "mg/dL"],
+    "optimalRange": {
+      "low": 0.5,
+      "suboptimalLow": 1.0,
+      "optimal": 1.7,
+      "suboptimalHigh": 2.3,
+      "high": 3.0
+    },
+    "description": "Blood fats that affect cardiovascular health"
+  },
+  {
+    "Id": 15,
+    "name": "HbA1c",
+    "category": "Metabolic",
+    "units": ["%", "mmol/mol"],
+    "optimalRange": {
+      "low": 4.0,
+      "suboptimalLow": 4.5,
+      "optimal": 5.5,
+      "suboptimalHigh": 6.0,
+      "high": 7.0
+    },
+    "description": "Average blood sugar over 2-3 months"
+  },
+  {
+    "Id": 16,
+    "name": "Fasting Glucose",
+    "category": "Metabolic",
+    "units": ["mmol/L", "mg/dL"],
+    "optimalRange": {
+      "low": 3.5,
+      "suboptimalLow": 4.5,
+      "optimal": 5.5,
+      "suboptimalHigh": 6.5,
+      "high": 7.5
+    },
+    "description": "Blood sugar levels after fasting"
+  },
+  {
+    "Id": 17,
+    "name": "Hemoglobin",
+    "category": "Blood Health",
+    "units": ["g/L", "g/dL"],
+    "optimalRange": {
+      "low": 120,
+      "suboptimalLow": 140,
+      "optimal": 160,
+      "suboptimalHigh": 175,
+      "high": 190
+    },
+    "description": "Oxygen-carrying protein in red blood cells"
+  },
+  {
+    "Id": 18,
+    "name": "Hematocrit",
+    "category": "Blood Health",
+    "units": ["%", "L/L"],
+    "optimalRange": {
+      "low": 0.38,
+      "suboptimalLow": 0.42,
+      "optimal": 0.48,
+      "suboptimalHigh": 0.52,
+      "high": 0.56
+    },
+    "description": "Percentage of blood volume that is red blood cells"
+  },
+  {
+    "Id": 19,
+    "name": "PSA (Prostate Specific Antigen)",
+    "category": "Men's Health",
+    "units": ["μg/L", "ng/mL"],
+    "optimalRange": {
+      "low": 0.0,
+      "suboptimalLow": 1.0,
+      "optimal": 2.5,
+      "suboptimalHigh": 4.0,
+      "high": 10.0
+    },
+    "description": "Marker for prostate health and cancer screening"
+  },
+  {
+    "Id": 20,
+    "name": "Ferritin",
+    "category": "Men's Health",
+    "units": ["μg/L", "ng/mL"],
+    "optimalRange": {
+      "low": 30,
+      "suboptimalLow": 80,
+      "optimal": 200,
+      "suboptimalHigh": 300,
+      "high": 500
+    },
+    "description": "Iron storage protein important for energy and testosterone"
+  }
+]
