@@ -1,9 +1,16 @@
+@import 'react-toastify/dist/ReactToastify.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import react-toastify CSS */
-@import 'react-toastify/dist/ReactToastify.css';
+/* Viewport capture fix */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
 /* Ensure scrollbars are visible */
 body {

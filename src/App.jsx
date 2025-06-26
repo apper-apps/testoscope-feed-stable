@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import Layout from './Layout'
-import { routes, routeArray } from './config/routes'
+import { routes, routeArray } from '@/config/routes'
 import NotFound from './components/pages/NotFound'
 
 function App() {
