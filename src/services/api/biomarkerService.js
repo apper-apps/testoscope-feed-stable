@@ -102,20 +102,43 @@ class BiomarkerService {
     }
   }
 
-  formatBiomarkerData(item) {
+formatBiomarkerData(item) {
     try {
+      // Safe JSON parsing helper
+      const safeJsonParse = (value, fallback) => {
+        if (!value) return fallback;
+        if (typeof value === 'object') return value;
+        if (typeof value === 'string') {
+          try {
+            return JSON.parse(value);
+          } catch {
+            return fallback;
+          }
+        }
+        return fallback;
+      };
+
       return {
-        Id: item.Id,
-        name: item.Name,
-        category: item.category,
-        units: typeof item.units === 'string' ? JSON.parse(item.units) : item.units || [],
-        optimalRange: typeof item.optimal_range === 'string' ? JSON.parse(item.optimal_range) : item.optimal_range || {},
-        ageAdjustment: typeof item.age_adjustment === 'string' ? JSON.parse(item.age_adjustment) : item.age_adjustment || null,
-        description: item.description
+        Id: item.Id || item.id,
+        name: item.Name || item.name || '',
+        category: item.category || '',
+        units: safeJsonParse(item.units, []),
+        optimalRange: safeJsonParse(item.optimal_range || item.optimalRange, {}),
+        ageAdjustment: safeJsonParse(item.age_adjustment || item.ageAdjustment, null),
+        description: item.description || ''
       };
     } catch (error) {
-      console.error('Error formatting biomarker data:', error);
-      return item;
+      console.error('Error formatting biomarker data:', error, 'Item:', item);
+      // Return a safe fallback object with expected structure
+      return {
+        Id: item.Id || item.id || 0,
+        name: item.Name || item.name || 'Unknown',
+        category: item.category || 'Unknown',
+        units: [],
+        optimalRange: {},
+        ageAdjustment: null,
+        description: item.description || ''
+      };
     }
   }
 
