@@ -34,9 +34,28 @@ const Layout = () => {
             >
               <Outlet />
             </motion.div>
-          </AnimatePresence>
+</AnimatePresence>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="bg-surface-50 border-t border-surface-200 mt-auto">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center">
+            <div className="flex flex-wrap justify-center items-center gap-4 mb-4 text-sm text-surface-600">
+              <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+              <span className="text-surface-300">•</span>
+              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+              <span className="text-surface-300">•</span>
+              <a href="#" className="hover:text-primary transition-colors">Cookie Declaration</a>
+            </div>
+            <p className="text-xs text-surface-500 max-w-4xl mx-auto leading-relaxed">
+              The information, content, and materials presented here are for informational and educational purposes only. 
+              They do not constitute medical advice, diagnosis, or treatment, and should not be considered a substitute for professional medical
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

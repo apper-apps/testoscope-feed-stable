@@ -85,11 +85,11 @@ const Upload = () => {
           Upload your PDF blood test report and let our AI extract and analyze your hormone markers. 
           We'll identify patterns and provide personalized insights for your hormone health journey.
 </p>
-      </motion.div>
+</motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="space-y-8">
         {/* Upload Section */}
-        <div className="">
+        <div>
           <Card className="p-8 border-2 border-surface-200">
             <FileUploadZone
               onFileSelect={handleFileSelect}
@@ -120,9 +120,9 @@ const Upload = () => {
           </Card>
         </div>
 
-{/* Manual Entry Option */}
-        <div className="">
-          <Card className="p-6 border-2 border-dashed border-surface-300 h-full">
+        {/* Manual Entry Option */}
+        <div>
+          <Card className="p-6 border-2 border-dashed border-surface-300">
             <h3 className="font-semibold text-surface-900 mb-3 flex items-center">
               <ApperIcon name="Edit" size={18} className="mr-2 text-warning" />
               Manual Entry
