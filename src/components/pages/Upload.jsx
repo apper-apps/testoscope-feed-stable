@@ -84,31 +84,8 @@ const Upload = () => {
         <p className="text-lg text-surface-600 max-w-2xl mx-auto">
           Upload your PDF blood test report and let our AI extract and analyze your hormone markers. 
           We'll identify patterns and provide personalized insights for your hormone health journey.
-        </p>
+</p>
       </motion.div>
-{/* Privacy Statement */}
-      <div className="mb-8 p-4 bg-surface-50 border border-surface-200 rounded-lg">
-        <div className="flex items-center justify-center">
-          <div className="flex items-center space-x-6 text-sm text-surface-600">
-            <div className="flex items-center">
-              <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
-              <span>Your Privacy</span>
-            </div>
-            <div className="flex items-center">
-              <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
-              <span>Session-only storage</span>
-            </div>
-            <div className="flex items-center">
-              <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
-              <span>No permanent data retention</span>
-            </div>
-            <div className="flex items-center">
-              <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
-              <span>Secure processing</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Upload Section */}
@@ -143,9 +120,9 @@ const Upload = () => {
           </Card>
         </div>
 
-        {/* Manual Entry Option */}
+{/* Manual Entry Option */}
         <div className="">
-          <Card className="p-6 border-2 border-surface-200 h-full">
+          <Card className="p-6 border-2 border-dashed border-surface-300 h-full">
             <h3 className="font-semibold text-surface-900 mb-3 flex items-center">
               <ApperIcon name="Edit" size={18} className="mr-2 text-warning" />
               Manual Entry
