@@ -87,7 +87,7 @@ const Upload = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Upload Section */}
         <div className="lg:col-span-2">
           <Card className="p-8">
@@ -118,35 +118,30 @@ const Upload = () => {
               </motion.div>
             )}
           </Card>
+
+          {/* Manual Entry Option */}
+          <Card className="p-6 border-2 border-dashed border-surface-300 mt-6">
+            <h3 className="font-semibold text-surface-900 mb-3 flex items-center">
+              <ApperIcon name="Edit" size={18} className="mr-2 text-warning" />
+              Manual Entry
+            </h3>
+            <p className="text-sm text-surface-600 mb-4">
+              Don't have a PDF or experiencing issues? Enter your values manually.
+            </p>
+            <Button 
+              variant="outline" 
+              onClick={handleManualEntry}
+              className="w-full"
+              icon="ArrowRight"
+            >
+              Enter Manually
+            </Button>
+          </Card>
         </div>
 
         {/* Info Sidebar */}
-        <div className="space-y-6">
-          {/* What We Support */}
-          <Card className="p-6">
-            <h3 className="font-semibold text-surface-900 mb-4 flex items-center">
-              <ApperIcon name="CheckCircle" size={18} className="mr-2 text-success" />
-              What We Support
-            </h3>
-            <ul className="space-y-2 text-sm text-surface-600">
-              <li className="flex items-center">
-                <span className="w-1.5 h-1.5 bg-success rounded-full mr-2"></span>
-                PDF blood test reports
-              </li>
-              <li className="flex items-center">
-                <span className="w-1.5 h-1.5 bg-success rounded-full mr-2"></span>
-                50+ hormone markers
-              </li>
-              <li className="flex items-center">
-                <span className="w-1.5 h-1.5 bg-success rounded-full mr-2"></span>
-                Multiple lab formats
-              </li>
-              <li className="flex items-center">
-                <span className="w-1.5 h-1.5 bg-success rounded-full mr-2"></span>
-                Automatic value extraction
-              </li>
-            </ul>
-          </Card>
+<div className="space-y-6">
+          {/* Privacy Note */}
 
           {/* Privacy Note */}
           <Card className="p-6">
@@ -170,25 +165,7 @@ const Upload = () => {
             </ul>
           </Card>
 
-          {/* Manual Entry Option */}
-          <Card className="p-6 border-2 border-dashed border-surface-300">
-            <h3 className="font-semibold text-surface-900 mb-3 flex items-center">
-              <ApperIcon name="Edit" size={18} className="mr-2 text-warning" />
-              Manual Entry
-            </h3>
-            <p className="text-sm text-surface-600 mb-4">
-              Don't have a PDF or experiencing issues? Enter your values manually.
-            </p>
-            <Button 
-              variant="outline" 
-              onClick={handleManualEntry}
-              className="w-full"
-              icon="ArrowRight"
-            >
-              Enter Manually
-            </Button>
-          </Card>
-        </div>
+</div>
       </div>
     </div>
   )
