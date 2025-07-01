@@ -3,10 +3,16 @@ import { toast } from 'react-toastify'
 class BiomarkerService {
   constructor() {
     this.apperClient = null;
-    this.initClient();
+    this.isAdminMode = import.meta.env.VITE_ADMIN_MODE === 'true';
+    if (this.isAdminMode) {
+      this.initClient();
+    }
   }
 
   initClient() {
+    if (!this.isAdminMode) {
+      throw new Error('Database access restricted to admin use only');
+    }
     const { ApperClient } = window.ApperSDK;
     this.apperClient = new ApperClient({
       apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
@@ -14,7 +20,13 @@ class BiomarkerService {
     });
   }
 
-  async getAll() {
+  checkAdminAccess() {
+    if (!this.isAdminMode) {
+      throw new Error('Database access restricted to admin use only');
+    }
+  }
+async getAll() {
+    this.checkAdminAccess();
     try {
       const params = {
         fields: [
@@ -43,7 +55,8 @@ class BiomarkerService {
     }
   }
 
-  async getById(id) {
+async getById(id) {
+    this.checkAdminAccess();
     try {
       const params = {
         fields: [
@@ -69,7 +82,8 @@ class BiomarkerService {
     }
   }
 
-  async getByCategory(category) {
+async getByCategory(category) {
+    this.checkAdminAccess();
     try {
       const params = {
         fields: [

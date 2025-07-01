@@ -3,10 +3,16 @@ import { toast } from 'react-toastify'
 class TestResultService {
   constructor() {
     this.apperClient = null;
-    this.initClient();
+    this.isAdminMode = import.meta.env.VITE_ADMIN_MODE === 'true';
+    if (this.isAdminMode) {
+      this.initClient();
+    }
   }
 
   initClient() {
+    if (!this.isAdminMode) {
+      throw new Error('Database access restricted to admin use only');
+    }
     const { ApperClient } = window.ApperSDK;
     this.apperClient = new ApperClient({
       apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
@@ -14,7 +20,13 @@ class TestResultService {
     });
   }
 
-  async getAll() {
+  checkAdminAccess() {
+    if (!this.isAdminMode) {
+      throw new Error('Database access restricted to admin use only');
+    }
+  }
+async getAll() {
+    this.checkAdminAccess();
     try {
       const params = {
         fields: [
@@ -42,7 +54,8 @@ class TestResultService {
     }
   }
 
-  async getById(id) {
+async getById(id) {
+    this.checkAdminAccess();
     try {
       const params = {
         fields: [
@@ -67,7 +80,8 @@ class TestResultService {
     }
   }
 
-  async create(item) {
+async create(item) {
+    this.checkAdminAccess();
     try {
       const params = {
         records: [{
@@ -112,7 +126,8 @@ class TestResultService {
     }
   }
 
-  async update(id, updates) {
+async update(id, updates) {
+    this.checkAdminAccess();
     try {
       const params = {
         records: [{
@@ -158,7 +173,8 @@ class TestResultService {
     }
   }
 
-  async delete(id) {
+async delete(id) {
+    this.checkAdminAccess();
     try {
       const params = {
         RecordIds: [parseInt(id, 10)]
@@ -193,25 +209,26 @@ class TestResultService {
     }
   }
 
-  async saveTestResults(results) {
-    // Keep session storage for current workflow while also persisting to database
+async saveTestResults(results) {
+    // Keep session storage for current workflow
     sessionStorage.setItem('testoscope_current_results', JSON.stringify(results));
     
-    // Optionally persist each result to database
-    try {
-      for (const [markerId, result] of Object.entries(results)) {
-        await this.create({
-          Name: `Test Result for Marker ${markerId}`,
-          marker_id: markerId,
-          value: result.value,
-          unit: result.unit,
-          status: result.status
-        });
+    // Only persist to database if admin mode is enabled
+    if (this.isAdminMode) {
+      try {
+        for (const [markerId, result] of Object.entries(results)) {
+          await this.create({
+            Name: `Test Result for Marker ${markerId}`,
+            marker_id: markerId,
+            value: result.value,
+            unit: result.unit,
+            status: result.status
+          });
+        }
+      } catch (error) {
+        console.error('Error persisting test results to database:', error);
       }
-    } catch (error) {
-      console.error('Error persisting test results to database:', error);
     }
-    
     return results;
   }
 
